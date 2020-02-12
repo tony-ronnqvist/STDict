@@ -1,7 +1,7 @@
-###Documentation - STDict a TREAP dictionary
+# Documentation - STDict a TREAP dictionary
 A dictionary is a data-structure that uses keys to associate values, as an example, in this dictionary we can associated the integer 1 with "Hello world". Because this dictionary is built on a TREAP, it's sorted, and the built-in methods has a high probability to perform in the average case.
 
-##More information on TREAP and binary search tree (BST)
+## More information on TREAP and binary search tree (BST)
 Insertion in the dictionary follows the following rules: if the key is greater than the root key, then it will be inserted to the right else insertion will be to the left. If the slot to the right or the left is occupied, and insertion should have been in either, then instead we compare the keys to that of the right or left key and follow the same rules. Because insertion follows these rules the dictionary will be sorted.
 
 A balanced BST is a tree where the min a max depth of the tree is close to equal. This is achieved by given each node a randomized priority value and rotating the tree when the priority is wrong. This is where the TREAP is different from an ordinary BST, there is a high probability that the TREAP is balanced and therefore the methods have a high probability to run in the average case.

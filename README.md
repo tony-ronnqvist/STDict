@@ -14,9 +14,14 @@ A dictionary is a data-structure that uses keys to associate values, as an examp
 | Delete        |  	O(log n)    |   O(n)     |
 | sort          | 	O(nlog n)   |   O(n^2)   |
 
-***
 
-### Documentation
+***
+### Roadmap
+
+* The API of this library is frozen.
+* Version numbers adhere to semantic versioning.
+
+***
 
 # Documentation - STDict, TREAP dictonary 
 
@@ -131,9 +136,3 @@ Down below you will find a discription of all the methods included in this packa
 
     Clears the a STDict-object of all keys and associated values.
 
-
-***
-### Roadmap
-
-* The API of this library is frozen.
-* Version numbers adhere to semantic versioning.

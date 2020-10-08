@@ -3,21 +3,24 @@ import random
 
 class STDict:
     """Creates a new sorted dictionary data-structure. The data structures handel keys as integer or strings.
-    By default, when a new dictionary is created, the keys are set as strings."""
+    By default, when a new dictionary is created, the keys are set as strings.
+    
+    A dictionary is a data-structure that associate keys with values, as an example, in this dictionary we
+    can associate the integer 1 with the string "Hello world". Because this dictionary is built on a TREAP, it
+    is sorted, and the built-in methods has a high probability to perform in the average case. Insertion in the
+    dictionary follows the following rules:
+    
+    If the inserted key is greater than the key of the root, then it will be added as the right leaf, given that
+    the root key has no leaf to the right. If the root already has a right leaf, then they key is compared against
+    the key of the right leaf, and the same rules are applied. If the inserted key is less than the root, then it is
+    instead added as the left leaf. Because insertion follows these rules the dictionary will be sorted.
+    
+    A balanced BST is a tree where the minimum and maximum depth of the tree are close to equal. This is achieved by
+    given each node a randomized priority value and rotating the tree when the priority is wrong. This is where the
+    TREAP is different from an ordinary BST; there is a high probability that the TREAP is balanced and therefore
+    the methods have a high probability to run in the average case."""
 
-    #  A dictionary is a data-structure uses keys to associate values, as an example, in this dictionary we can
-    #  associated the integer 1 with "Hello world". Because this dictionary is built on a TREAP, it's sorted and
-    #  the built-in methods has a high probability to perform in the average case.
-
-    #  Insertion in the dictionary follows the following rules: if the key is greater than the root key, then it
-    #  will be inserted to the right else insertion will be to the left. If the slot to the right or the left is
-    #  occupied and insertion should have been in either, then instead we compare the keys to that of the right or
-    #  left key and follow the sames rules. Because insertion follows these rules the dictionary will be sorted.
-
-    #  A balanced BST is a tree where the min an max depth of the tree are close to equal. This is achieved by given
-    #  each node a randomized priority value and rotating the tree when the priority is wrong. This is where the TREAP
-    #  is different from a ordinary BST, there is a high probability that the TREAP is balanced and therefore the
-    #  methods have a high probability to run in the average case.
+  
 
     def __init__(self, root=None):
         self._root = root
@@ -116,10 +119,6 @@ class STDict:
     def get_type(self):
         """Returns the type of keys allowed in the STDict-object. "S" = strings and "I"= integers."""
         return self._type
-
-    ###########################################################################
-    # Help-methods to the methods above. None should be used outside of class.#
-    ###########################################################################
 
     def _type_check(self, key):
         """Help-function to control error for the STDict-methods. Key = key to check if correct type"""
